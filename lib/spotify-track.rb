@@ -67,7 +67,7 @@ class SpotifyTrack
       target  = URI.parse("https://api.spotify.com/v1/tracks/#{ track_id }")
       http    = Net::HTTP.new(target.host, target.port)
       http.use_ssl = true
-      request = Net::HTTP::Get.new(target.request_uri)
+      request = Net::HTTP::Get.new(target.request_uri, "Authorization" => "Bearer #{ENV['SPOTIFY_TOKEN']}")
 
       begin
         response = http.request(request)
