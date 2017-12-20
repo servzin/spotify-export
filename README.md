@@ -7,9 +7,9 @@ Let's convert a Spotify playlist into plain text!
 
 1. Open Spotify and go to the playlist that you want to export.
 2. Select the tracks that you want to export (Ctrl-A or Cmd-A to Select All).
-3. Right-click on the selected tracks and choose "Copy Spotify URI" from the menu.
+3. Right-click on the selected tracks and choose "Copy Spotify URI" from the menu, or simply Ctrl-C/Cmd-C.
 4. Go to the text editor of your choice and Paste.
-5. Save the file.
+5. Save the file under `your_filename.txt`.
 6. Run `./bin/spotify-export.rb your-filename.txt`.
 
 Running the command on the included `spec/support/multiple-tracks.txt` test file will produce the following output:
@@ -44,6 +44,9 @@ Requirements
 Setup
 -----
 * `bundle install`
+* Either add `SPOTIFY_TOKEN` variable into your shell config (`.bashrc`, `.bash_profile` etc) or prepend the script with it:
+`SPOTIFY_TOKEN=yourTOKENright_HERE ./bin/spotify_export.rb your-filename.txt`
+You can get the token [here](https://developer.spotify.com/web-api/console/get-track)
 
 
 Acknowledgments
